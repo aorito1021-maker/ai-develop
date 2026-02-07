@@ -1,0 +1,161 @@
+:root {
+  color-scheme: light;
+  font-family: "Noto Sans JP", system-ui, sans-serif;
+  background-color: #f4f6fb;
+  color: #1b1d2a;
+}
+
+body {
+  margin: 0;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background: #111827;
+  color: #fff;
+}
+
+.site-header nav a {
+  margin-right: 16px;
+  color: #c7d2fe;
+  text-decoration: none;
+}
+
+.site-header nav a:hover {
+  color: #fff;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-info form button,
+button {
+  background: #6366f1;
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.content {
+  padding: 32px;
+}
+
+.card {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(17, 24, 39, 0.08);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.form input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+}
+
+.error {
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.helper {
+  margin-top: 12px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.game-layout {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(320px, 1fr) 280px;
+}
+
+.game-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.game-area {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+#game-board {
+  background: #f9fafb;
+  border-radius: 12px;
+  border: 2px solid #c7d2fe;
+}
+
+.pieces {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.piece {
+  display: grid;
+  grid-template-columns: repeat(3, 24px);
+  gap: 2px;
+  padding: 8px;
+  background: #eef2ff;
+  border-radius: 10px;
+  cursor: grab;
+}
+
+.piece-cell {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  background: transparent;
+}
+
+.piece-cell.active {
+  background: #6366f1;
+}
+
+.game-stats {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.tips ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+@media (max-width: 960px) {
+  .game-layout {
+    grid-template-columns: 1fr;
+  }
+}

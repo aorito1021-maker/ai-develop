@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title if title else "Block Blast" }}</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">Block Blast Lab</div>
+      <nav>
+        <a href="/game">ゲーム</a>
+        <a href="/users">ユーザー管理</a>
+      </nav>
+      <div class="user-info">
+        {% if user %}
+        <span>こんにちは、{{ user.username }} さん</span>
+        <form action="/logout" method="post">
+          <button type="submit">ログアウト</button>
+        </form>
+        {% else %}
+        <a href="/login">ログイン</a>
+        {% endif %}
+      </div>
+    </header>
+    <main class="content">
+      {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>
