@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h1>ログイン</h1>
+  {% if error %}
+  <p class="error">{{ error }}</p>
+  {% endif %}
+  <form action="/login" method="post" class="form">
+    <label>
+      ユーザー名
+      <input type="text" name="username" required />
+    </label>
+    <label>
+      パスワード
+      <input type="password" name="password" required />
+    </label>
+    <button type="submit">ログイン</button>
+  </form>
+  <p class="helper">アカウントをお持ちでない場合は <a href="/register">新規登録</a>。</p>
+</section>
+{% endblock %}
