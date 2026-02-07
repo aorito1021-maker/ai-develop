@@ -2,4 +2,5 @@ fastapi
 uvicorn
 jinja2
 python-multipart
+itsdangerous
 pytest
