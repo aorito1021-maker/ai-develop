@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="game-layout">
+  <div class="card game-panel">
+    <h1>Block Blast ミニゲーム</h1>
+    <p>ブロックを配置して縦横のラインを揃えると消えます。左のブロックをドラッグして配置してください。</p>
+    <div class="game-area">
+      <canvas id="game-board" width="360" height="360"></canvas>
+      <div class="pieces" id="pieces"></div>
+    </div>
+    <div class="game-stats">
+      <div>
+        <span>スコア</span>
+        <strong id="score">0</strong>
+      </div>
+      <div>
+        <span>残りブロック</span>
+        <strong id="remaining">3</strong>
+      </div>
+      <button id="reset">リセット</button>
+    </div>
+  </div>
+  <aside class="card tips">
+    <h2>遊び方</h2>
+    <ul>
+      <li>ピースをドラッグして配置します。</li>
+      <li>縦/横ラインを埋めると消えてスコアが加算されます。</li>
+      <li>3つのピースを使い切ると新しいピースが補充されます。</li>
+    </ul>
+  </aside>
+</section>
+<script src="/static/js/game.js"></script>
+{% endblock %}

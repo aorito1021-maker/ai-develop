@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h1>ユーザー管理</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>ユーザー名</th>
+        <th>登録日時</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user_item in users %}
+      <tr>
+        <td>{{ user_item.id }}</td>
+        <td>{{ user_item.username }}</td>
+        <td>{{ user_item.created_at }}</td>
+      </tr>
+      {% else %}
+      <tr>
+        <td colspan="3">まだユーザーがいません。</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}

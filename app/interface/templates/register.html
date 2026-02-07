@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h1>ユーザー登録</h1>
+  {% if error %}
+  <p class="error">{{ error }}</p>
+  {% endif %}
+  <form action="/register" method="post" class="form">
+    <label>
+      ユーザー名
+      <input type="text" name="username" required />
+    </label>
+    <label>
+      パスワード
+      <input type="password" name="password" required />
+    </label>
+    <button type="submit">登録する</button>
+  </form>
+  <p class="helper">既にアカウントをお持ちの場合は <a href="/login">ログイン</a>。</p>
+</section>
+{% endblock %}

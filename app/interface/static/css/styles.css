@@ -1,0 +1,171 @@
+:root {
+  color-scheme: light;
+  font-family: "Noto Sans JP", system-ui, sans-serif;
+  background-color: #fff7ed;
+  color: #1f2937;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top left, #fef3c7, #e0f2fe 40%, #fce7f3 75%);
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background: linear-gradient(90deg, #7c3aed, #ec4899);
+  color: #fff;
+}
+
+.site-header nav a {
+  margin-right: 16px;
+  color: #fbcfe8;
+  text-decoration: none;
+}
+
+.site-header nav a:hover {
+  color: #fff;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-info form button,
+button {
+  background: linear-gradient(90deg, #f97316, #f43f5e);
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.content {
+  padding: 32px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(236, 72, 153, 0.15);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.form input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+}
+
+.error {
+  background: #ffe4e6;
+  color: #be123c;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.helper {
+  margin-top: 12px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.game-layout {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(320px, 1fr) 280px;
+}
+
+.game-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.game-area {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+#game-board {
+  background: #eff6ff;
+  border-radius: 12px;
+  border: 2px solid #f9a8d4;
+}
+
+.pieces {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.piece {
+  display: grid;
+  grid-template-columns: repeat(3, 24px);
+  gap: 2px;
+  padding: 8px;
+  background: #fde68a;
+  border-radius: 10px;
+  cursor: grab;
+}
+
+.piece-cell {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  background: transparent;
+}
+
+.piece-cell.active {
+  background: #f97316;
+}
+
+.piece.dragging {
+  opacity: 0.7;
+  transform: scale(1.02);
+}
+
+body.is-dragging #game-board {
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.4);
+}
+
+.game-stats {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.tips ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+@media (max-width: 960px) {
+  .game-layout {
+    grid-template-columns: 1fr;
+  }
+}
